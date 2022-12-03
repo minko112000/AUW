@@ -19,6 +19,13 @@ const jobs = [
   {img: 'images/cs.png', work: 'Computer Science', salary: '5000', Location: 'Singapore'},
 ]
 
+const empty_box = `
+      <div class="empty-box">
+        <img src="images/giphy.gif">
+        <h2 class="mt-2">Not found!</h2>
+      </div>
+`
+
 const box = (img, work, salary, location) => {
   $('#job-container')[0].innerHTML += `
   <div class="box">
@@ -51,7 +58,7 @@ const result = text => {
       box(filter_jobs[i].img, filter_jobs[i].work, filter_jobs[i].salary, filter_jobs[i].Location)
     }
   } else {
-    alert('not result found')
+    $('#job-container')[0].innerHTML = empty_box
   }
 }
 
